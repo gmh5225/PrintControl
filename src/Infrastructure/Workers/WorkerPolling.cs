@@ -19,22 +19,20 @@ namespace CaasId.src.Infrastructure.Workers
             var delayWorker = JsonAdapter.GetPollingTime;
             var clientId = JsonAdapter.GetClientId;
 			var officeId = JsonAdapter.GetOfficeId;
-			Dictionary<string, PrinterDataState> printerData = new Dictionary<string, PrinterDataState>();
-            PrinterDataState initDataState = new(DateTime.Now, "", "", "", "", "", PrinterStatus.Unknown, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-            var sigmaList = JsonAdapter.CreateSigmaStock(SigmaPrinters.GetList());
-            sigmaList.ForEach(printer =>
-            {
-                printerData.Add(printer.Name, initDataState);
-            });
+			Dictionary<string, PrinterDataState>? printerData = new Dictionary<string, PrinterDataState>();
+            List<Printer>? sigmaList = null;
 
-            while (!stoppingToken.IsCancellationRequested)
+			while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation("STATUS IMPRESORA: {time}\n", DateTimeOffset.Now);
+				sigmaList = JsonAdapter.GetPrinterList();
+				printerData = InitWorker.upDatePrintData(sigmaList, printerData);
                 Parallel.ForEach(sigmaList, async (print) =>
                 {
                     Console.WriteLine(print);
-                    printerData[print.Name] = SigmaPrinters.GetDataState(printerData[print.Name], print.Name, clientId, officeId);
-                    CsvAdapter.RecordError(printerData[print.Name], SigmaPrinters.CheckError(printerData[print.Name]));
+					Console.WriteLine(printerData[print.Name]);
+					printerData[print.Name] = SigmaPrinters.GetDataState(printerData[print.Name], print.Name, clientId, officeId);
+                    CsvAdapter.RecordApiError(printerData[print.Name], SigmaPrinters.CheckError(printerData[print.Name]));
                     if (printerData[print.Name].PrinterStatus == PrinterStatus.PrintFinished)
                     {
                         while(!CsvAdapter.RecordPrint(printerData[print.Name]))

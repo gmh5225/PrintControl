@@ -54,7 +54,7 @@ namespace CaasId.src.Infrastructure.Adapters
 			return true;	
 		}
 
-		public static bool RecordError(PrinterDataState printData, string? description)
+		public static bool RecordApiError(PrinterDataState printData, string? description)
 		{
 			if (description != null)
 			{

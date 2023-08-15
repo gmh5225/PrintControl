@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XZJKXoh5s4xQRij5Sosw2wNNZ6HreAkyQ9X5ifpYj4v9fNYWofcvgW/LcOSWymtiZGzK0V1NIBylj26kau3pkQ==",
+  "dgSpecHash": "5HBaYMlzr80Whi11M8kevKAtGjrHkBlD7V3onOgkSUaH8irKlwVc+te56Ts7WoLvgeHDjM6ML78PofLx2bjrXA==",
   "success": true,
-  "projectFilePath": "D:\\Proyectos_Veriddica\\CaaS_ID\\Programa\\Programa\\CaasId\\CaasId.csproj",
+  "projectFilePath": "D:\\GitHub\\PrintControl\\CaasId.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\leo40\\.nuget\\packages\\csharpfunctionalextensions\\2.40.0\\csharpfunctionalextensions.2.40.0.nupkg.sha512",
     "C:\\Users\\leo40\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",

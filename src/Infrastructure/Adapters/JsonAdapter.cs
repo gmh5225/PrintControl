@@ -8,13 +8,28 @@ namespace CaasId.src.Infrastructure.Adapters
 		public static List<Printer> CreateSigmaStock(List<Printer> sigmaList)
 		{
 			string json = JsonConvert.SerializeObject(sigmaList);
-			string path = Default.PathStock;
+			string path = Default.Path;
 			string fileName = Default.FileNameStock;
 
 			if (!Directory.Exists(path))
 				Directory.CreateDirectory(path);
 			File.WriteAllText(string.Concat(path, fileName), json);
 			return sigmaList;
+		}
+
+		public static List<Printer>? GetPrinterList() {
+			if (File.Exists(Default.PathStock))
+			{
+				using (StreamReader jsonStream = File.OpenText(Default.PathStock))
+				{
+					var json = jsonStream.ReadToEnd();
+					return JsonConvert.DeserializeObject<List<Printer>>(json);
+				}
+
+			}
+			else { 
+				return null;
+			}
 		}
 		public static List<PrinterConfig>? GetConfig()
 		{

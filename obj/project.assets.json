@@ -1774,11 +1774,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Proyectos_Veriddica\\CaaS_ID\\Programa\\Programa\\CaasId\\CaasId.csproj",
+      "projectUniqueName": "D:\\GitHub\\PrintControl\\CaasId.csproj",
       "projectName": "CaasId",
-      "projectPath": "D:\\Proyectos_Veriddica\\CaaS_ID\\Programa\\Programa\\CaasId\\CaasId.csproj",
+      "projectPath": "D:\\GitHub\\PrintControl\\CaasId.csproj",
       "packagesPath": "C:\\Users\\leo40\\.nuget\\packages\\",
-      "outputPath": "D:\\Proyectos_Veriddica\\CaaS_ID\\Programa\\Programa\\CaasId\\obj\\",
+      "outputPath": "D:\\GitHub\\PrintControl\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
