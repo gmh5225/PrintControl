@@ -33,7 +33,7 @@ namespace CaasId.src.Infrastructure.Workers
 					Console.WriteLine(printerData[print.Name]);
 					printerData[print.Name] = SigmaPrinters.GetDataState(printerData[print.Name], print.Name, clientId, officeId);
                     CsvAdapter.RecordApiError(printerData[print.Name], SigmaPrinters.CheckError(printerData[print.Name]));
-                    if (printerData[print.Name].PrinterStatus == PrinterStatus.PrintFinished)
+                    if ((printerData[print.Name].PrinterStatus == PrinterStatus.PrintFinished) || (printerData[print.Name].ErrorCode > 0))
                     {
                         while(!CsvAdapter.RecordPrint(printerData[print.Name]))
                             await Task.Delay(1000);
