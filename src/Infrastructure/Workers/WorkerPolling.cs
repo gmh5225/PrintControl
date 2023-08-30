@@ -37,7 +37,7 @@ namespace CaasId.src.Infrastructure.Workers
                     {
                         while(!CsvAdapter.RecordPrint(printerData[print.Name]))
                             await Task.Delay(1000);
-						Console.WriteLine("IMPRIMIO");
+						_logger.LogWarning("IMPRIMIO");
 					}
                 });
                 await Task.Delay(delayWorker, stoppingToken);

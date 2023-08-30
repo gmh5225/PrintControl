@@ -11,6 +11,7 @@
           "CSharpFunctionalExtensions": "2.40.0",
           "CsvHelper": "30.0.1",
           "Microsoft.Extensions.Hosting": "7.0.1",
+          "Microsoft.Extensions.Hosting.WindowsServices": "7.0.1",
           "Newtonsoft.Json": "13.0.3",
           "System.Drawing.Common": "7.0.0"
         },
@@ -203,7 +204,7 @@
           "Microsoft.Extensions.FileProviders.Physical": "7.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
           "Microsoft.Extensions.Logging.Configuration": "7.0.0",
           "Microsoft.Extensions.Logging.Console": "7.0.0",
           "Microsoft.Extensions.Logging.Debug": "7.0.0",
@@ -232,11 +233,25 @@
           }
         }
       },
+      "Microsoft.Extensions.Hosting.WindowsServices/7.0.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Hosting": "7.0.1",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
+          "Microsoft.Extensions.Logging.EventLog": "7.0.0",
+          "System.ServiceProcess.ServiceController": "7.0.1"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Hosting.WindowsServices.dll": {
+            "assemblyVersion": "7.0.0.1",
+            "fileVersion": "7.0.723.27404"
+          }
+        }
+      },
       "Microsoft.Extensions.Logging/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
           "Microsoft.Extensions.Options": "7.0.1"
         },
         "runtime": {
@@ -246,11 +261,11 @@
           }
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
+      "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
         "runtime": {
           "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+            "fileVersion": "7.0.723.27404"
           }
         }
       },
@@ -261,7 +276,7 @@
           "Microsoft.Extensions.Configuration.Binder": "7.0.3",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
           "Microsoft.Extensions.Options": "7.0.1",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "7.0.0"
         },
@@ -276,7 +291,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
           "Microsoft.Extensions.Logging.Configuration": "7.0.0",
           "Microsoft.Extensions.Options": "7.0.1",
           "System.Text.Json": "7.0.0"
@@ -292,7 +307,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1"
         },
         "runtime": {
           "lib/net7.0/Microsoft.Extensions.Logging.Debug.dll": {
@@ -305,7 +320,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
           "Microsoft.Extensions.Options": "7.0.1",
           "System.Diagnostics.EventLog": "7.0.0"
         },
@@ -320,7 +335,7 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
           "Microsoft.Extensions.Options": "7.0.1",
           "Microsoft.Extensions.Primitives": "7.0.0",
           "System.Text.Json": "7.0.0"
@@ -430,6 +445,25 @@
             "assetType": "runtime",
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
+      "System.ServiceProcess.ServiceController/7.0.1": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.ServiceProcess.ServiceController.dll": {
+            "assemblyVersion": "7.0.0.1",
+            "fileVersion": "7.0.723.27404"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.ServiceProcess.ServiceController.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.1",
+            "fileVersion": "7.0.723.27404"
           }
         }
       },
@@ -566,6 +600,13 @@
       "path": "microsoft.extensions.hosting.abstractions/7.0.0",
       "hashPath": "microsoft.extensions.hosting.abstractions.7.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Hosting.WindowsServices/7.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6kedR2ye8fDyABQUrqD7bVyphpNpBDlBaoxC6kBcybKCJUGFJ5KDXr25U1I2MFeXAJFZuVVNT5Du2FUEH15Qcw==",
+      "path": "microsoft.extensions.hosting.windowsservices/7.0.1",
+      "hashPath": "microsoft.extensions.hosting.windowsservices.7.0.1.nupkg.sha512"
+    },
     "Microsoft.Extensions.Logging/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -573,12 +614,12 @@
       "path": "microsoft.extensions.logging/7.0.0",
       "hashPath": "microsoft.extensions.logging.7.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
+    "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kmn78+LPVMOWeITUjIlfxUPDsI0R6G0RkeAMBmQxAJ7vBJn4q2dTva7pWi65ceN5vPGjJ9q/Uae2WKgvfktJAw==",
-      "path": "microsoft.extensions.logging.abstractions/7.0.0",
-      "hashPath": "microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512"
+      "sha512": "sha512-pkeBFx0vqMW/A3aUVHh7MPu3WkBhaVlezhSZeb1c9XD0vUReYH1TLFSy5MxJgZfmz5LZzYoErMorlYZiwpOoNA==",
+      "path": "microsoft.extensions.logging.abstractions/7.0.1",
+      "hashPath": "microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Configuration/7.0.0": {
       "type": "package",
@@ -670,6 +711,13 @@
       "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
       "path": "system.drawing.common/7.0.0",
       "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
+    },
+    "System.ServiceProcess.ServiceController/7.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rPfXTJzYU46AmWYXRATQzQQ01hICrkl3GuUHgpAr9mnUwAVSsga5x3mBxanFPlJBV9ilzqMXbQyDLJQAbyTnSw==",
+      "path": "system.serviceprocess.servicecontroller/7.0.1",
+      "hashPath": "system.serviceprocess.servicecontroller.7.0.1.nupkg.sha512"
     },
     "System.Text.Encodings.Web/7.0.0": {
       "type": "package",
