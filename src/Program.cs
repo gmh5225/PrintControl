@@ -2,10 +2,14 @@ using CaasId.src.Infrastructure.Workers;
 using Microsoft.Extensions.Logging.Configuration;
 using Microsoft.Extensions.Logging.EventLog;
 using CliWrap;
+using System.IO;
+using System.Reflection.Metadata;
+using CaasId.src.Domain.Entities;
+using Newtonsoft.Json;
 
-const string ServiceName = ".NET Joke Service";
+const string ServiceName = ".NET CaasId Service";
 
-if (args is { Length: 1 })
+if (args.Length >= 1)
 {
 	try
 	{
@@ -14,9 +18,16 @@ if (args is { Length: 1 })
 
 		if (args[0] is "/Install")
 		{
+			PrinterConfig defaultconfig = new(args[1], args[2], args[3], args[5], args[6]);
+			List<PrinterConfig> lst = new()
+			{
+				defaultconfig
+			};
+			string json = JsonConvert.SerializeObject(lst);
 			await Cli.Wrap("sc")
 				.WithArguments(new[] { "create", ServiceName, $"binPath={executablePath}", "start=auto" })
 				.ExecuteAsync();
+			File.WriteAllText(string.Concat(@"C:\CaasId\", "clientconfig.json"), json);
 		}
 		else if (args[0] is "/Uninstall")
 		{
@@ -56,12 +67,3 @@ builder.Logging.AddConfiguration(
 IHost host = builder.Build();
 host.Run();
 
-/*IHost host = Host.CreateDefaultBuilder(args)
-	.ConfigureServices(services =>
-	{
-		services.AddHostedService<WorkerFindPrinter>();
-		services.AddHostedService<WorkerPolling>();
-	})
-	.Build();
-
-host.Run();*/

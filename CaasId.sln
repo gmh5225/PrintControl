@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaasId", "CaasId.csproj", "{5AF4E76D-855C-4F12-B7A5-9681E2AD8656}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupCaasId", "..\SetupCaasId\SetupCaasId.vdproj", "{8EDCA08E-C823-40FD-83A5-4B13FB900CCD}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupCaasId", "..\SetupCaasId\SetupCaasId.vdproj", "{E16F7024-709B-4C5C-9CF5-1EE52E42D349}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{5AF4E76D-855C-4F12-B7A5-9681E2AD8656}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AF4E76D-855C-4F12-B7A5-9681E2AD8656}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AF4E76D-855C-4F12-B7A5-9681E2AD8656}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EDCA08E-C823-40FD-83A5-4B13FB900CCD}.Debug|Any CPU.ActiveCfg = Debug
-		{8EDCA08E-C823-40FD-83A5-4B13FB900CCD}.Release|Any CPU.ActiveCfg = Release
+		{E16F7024-709B-4C5C-9CF5-1EE52E42D349}.Debug|Any CPU.ActiveCfg = Debug
+		{E16F7024-709B-4C5C-9CF5-1EE52E42D349}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
