@@ -50,9 +50,9 @@ namespace CaasId.src.Infrastructure.Adapters
 			}
 		}
 		public static int GetFinderTime => Convert.ToInt32(GetConfig().First().FindPrinterTime) > 0
-				? Convert.ToInt32(GetConfig().First().FindPrinterTime) : Default.FinderTime;
+				? Convert.ToInt32(GetConfig().First().FindPrinterTime)*60000 : Default.FinderTime;
 		public static int GetPollingTime => Convert.ToInt32(GetConfig().First().PollingTime) > 0
-				? Convert.ToInt32(GetConfig().First().PollingTime) : Default.PollingTime;
+				? Convert.ToInt32(GetConfig().First().PollingTime)*1000 : Default.PollingTime;
 		public static string GetClientId => GetConfig().First().ClientId != null
 				? GetConfig().First().ClientId : Default.ClientId;
 		public static string GetOfficeId => GetConfig().First().OfficeId != null

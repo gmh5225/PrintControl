@@ -6,6 +6,8 @@ using System.IO;
 using System.Reflection.Metadata;
 using CaasId.src.Domain.Entities;
 using Newtonsoft.Json;
+using CaasId.src.Aplication.UseCases;
+
 
 const string ServiceName = ".NET CaasId Service";
 
@@ -17,17 +19,11 @@ if (args.Length >= 1)
 			Path.Combine(AppContext.BaseDirectory, "CaasId.exe");
 
 		if (args[0] is "/Install")
-		{
-			PrinterConfig defaultconfig = new(args[1], args[2], args[3], args[5], args[6]);
-			List<PrinterConfig> lst = new()
-			{
-				defaultconfig
-			};
-			string json = JsonConvert.SerializeObject(lst);
+		{	
 			await Cli.Wrap("sc")
 				.WithArguments(new[] { "create", ServiceName, $"binPath={executablePath}", "start=auto" })
 				.ExecuteAsync();
-			File.WriteAllText(string.Concat(@"C:\CaasId\", "clientconfig.json"), json);
+			AppHelper.initAppAsync(args);
 		}
 		else if (args[0] is "/Uninstall")
 		{
