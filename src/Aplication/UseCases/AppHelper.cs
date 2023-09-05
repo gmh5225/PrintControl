@@ -12,7 +12,7 @@ namespace CaasId.src.Aplication.UseCases
 	public static class AppHelper
 	{
 		const string ServiceName = ".NET CaasId Service";
-		public static bool initAppAsync(String[] args)
+		public static bool initApp(String[] args)
 		{
 			PrinterConfig defaultconfig = new(args[1], args[2], args[3], args[5], args[6]);
 			List<PrinterConfig> lst = new()

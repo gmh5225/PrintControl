@@ -233,3 +233,4 @@ D:\GitHub\PrintControl\obj\Debug\net7.0\win-x64\CaasId.pdb
 D:\GitHub\PrintControl\obj\Debug\net7.0\win-x64\CaasId.genruntimeconfig.cache
 D:\GitHub\PrintControl\obj\Debug\net7.0\win-x64\ref\CaasId.dll
 D:\GitHub\PrintControl\bin\Debug\net7.0\win-x64\CliWrap.dll
+D:\GitHub\PrintControl\bin\Debug\net7.0\win-x64\printers.jsonprinters.json

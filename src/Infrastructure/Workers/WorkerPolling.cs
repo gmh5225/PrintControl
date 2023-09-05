@@ -32,12 +32,12 @@ namespace CaasId.src.Infrastructure.Workers
                     Console.WriteLine(print);
 					Console.WriteLine(printerData[print.Name]);
 					printerData[print.Name] = SigmaPrinters.GetDataState(printerData[print.Name], print.Name, clientId, officeId);
-                    CsvAdapter.RecordApiError(printerData[print.Name], SigmaPrinters.CheckError(printerData[print.Name]));
+                    CsvAdapter.RecordApiError(printerData[print.Name], SigmaPrinters.CheckError(printerData[print.Name]), _logger);
                     if ((printerData[print.Name].PrinterStatus == PrinterStatus.PrintFinished) || (printerData[print.Name].ErrorCode > 0))
                     {
                         while(!CsvAdapter.RecordPrint(printerData[print.Name]))
                             await Task.Delay(1000);
-						_logger.LogWarning("IMPRIMIO");
+						_logger.LogWarning("Ingreso de Registro en Archivo");
 					}
                 });
                 await Task.Delay(delayWorker, stoppingToken);

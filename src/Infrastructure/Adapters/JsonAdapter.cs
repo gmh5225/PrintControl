@@ -43,7 +43,7 @@ namespace CaasId.src.Infrastructure.Adapters
 			}
 			else
 			{
-				PrinterConfig defaultconfig = new(Default.ClientId, Default.OfficeId, Default.DocumentType, Default.FinderTime.ToString(), Default.PollingTime.ToString());
+				PrinterConfig defaultconfig = new(Default.ClientId, Default.OfficeId, Default.DocumentType, "0", "0");
 				List<PrinterConfig> lst = new List<PrinterConfig>();
 				lst.Add(defaultconfig);
 				return lst;

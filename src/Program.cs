@@ -23,7 +23,7 @@ if (args.Length >= 1)
 			await Cli.Wrap("sc")
 				.WithArguments(new[] { "create", ServiceName, $"binPath={executablePath}", "start=auto" })
 				.ExecuteAsync();
-			AppHelper.initAppAsync(args);
+			AppHelper.initApp(args);
 		}
 		else if (args[0] is "/Uninstall")
 		{
@@ -48,7 +48,7 @@ if (args.Length >= 1)
 HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddWindowsService(options =>
 {
-	options.ServiceName = ".NET Joke Service";
+	options.ServiceName = ServiceName;
 });
 
 LoggerProviderOptions.RegisterProviderOptions<

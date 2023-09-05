@@ -1,4 +1,5 @@
 ﻿using CaasId.src.Domain.Entities;
+using CaasId.src.Infrastructure.Workers;
 using CsvHelper;
 using CsvHelper.Configuration;
 using System;
@@ -54,10 +55,11 @@ namespace CaasId.src.Infrastructure.Adapters
 			return true;	
 		}
 
-		public static bool RecordApiError(PrinterDataState printData, string? description)
+		public static bool RecordApiError(PrinterDataState printData, string? description, ILogger<WorkerPolling> logger)
 		{
 			if (description != null)
 			{
+				logger.LogWarning(description);
 				WindowsIdentity identidad = WindowsIdentity.GetCurrent();
 				DataError printRecord = new(DateTime.Now, printData.ErrorCode, description, "Check Printer API", printData.printerName, identidad.Name);
 				var fileExistsil = true;
